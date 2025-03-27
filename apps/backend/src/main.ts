@@ -1,16 +1,9 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
-import express from 'express';
-import * as path from 'path';
-
+const express = require('express');
 const app = express();
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+import type { Request, Response } from 'express';
 
-app.get('/api', (req, res) => {
+app.get('/api', (req: Request, res: Response) => {
   res.send({ message: 'Welcome to backend!' });
 });
 
