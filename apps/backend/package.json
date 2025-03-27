@@ -7,25 +7,36 @@
       "serve": {
         "executor": "@nx/js:node",
         "defaultConfiguration": "development",
-        "dependsOn": [
-          "build"
-        ],
         "options": {
-          "buildTarget": "@auth-practice/backend:build",
-          "runBuildTargetDependencies": false
+          "buildTarget": "@auth-practice/backend:build"
         },
         "configurations": {
           "development": {
-            "buildTarget": "@auth-practice/backend:build:development"
+            "buildTarget": "@auth-practice/backend:build:development",
+            "args": [
+              "--env-file=apps/backend/.env.development"
+            ]
           },
           "production": {
-            "buildTarget": "@auth-practice/backend:build:production"
+            "buildTarget": "@auth-practice/backend:build:production",
+            "args": [
+              "--env-file=apps/backend/.env.production"
+            ]
           }
         }
       },
       "test": {
+        "executor": "@nx/jest:jest",
         "options": {
+          "jestConfig": "apps/backend/jest.config.ts",
           "passWithNoTests": true
+        },
+        "configurations": {
+          "test": {
+            "args": [
+              "--env-file=apps/backend/.env.test"
+            ]
+          }
         }
       }
     }
