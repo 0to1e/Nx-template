@@ -1,0 +1,36 @@
+# Dependency directories
+node_modules
+
+# Build output
+dist
+build
+out
+
+# Generated files
+*.min.js
+*.map
+*.d.ts
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Configuration and lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Vite-specific (common with React + Tailwind)
+vite.config.ts.timestamp-*
+
+# Tailwind-specific
+tailwind.config.js
+postcss.config.js
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage

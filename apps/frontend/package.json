@@ -1,5 +1,8 @@
 {
   "name": "@auth-practice/frontend",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  }
 }
